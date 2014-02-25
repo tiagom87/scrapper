@@ -1,0 +1,6 @@
+<div class="container">
+<h3>Analysis per Category</h3>
+<%= pie_chart Udemy.group("course_type").sum(:count) %>
+<%= column_chart Udemy.group("course_type").sum(:count) %>
+<%= bar_chart Udemy.group("course_type").sum(:count) %>
+</div>

@@ -1,0 +1,33 @@
+<h1 class="text-center">Udemy Technology Courses</h1>
+<%= link_to "Excel", udemies_path(format: "xls") %>
+      <table class="table table-striped">
+        <thead>
+
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Count</th>
+            <th>Price</th>
+            <th>Sold</th>
+            <th>Rating</th>
+            <th>Our Rating</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        	<% @udemies.all.each do |a| %>
+        <tr>
+          <td><%= a.id %></td>
+        	<td><%= a.title %></td>
+        	<td><%= a.description %></td>
+        	<td><%= a.count %></td>
+        	<td><%= a.currency_to_integer(a.price) %></td>
+          <td><%= a.currency_to_integer(a.price) * a.count.to_i %></td>
+        	<td><%= a.rating %></td>
+          <td><%= a.our_rating %></td>
+          <td><%= link_to "Edit", edit_udemy_path(a) %></td>
+        </tr>
+        <% end %>
+        </tbody>
+      </table>

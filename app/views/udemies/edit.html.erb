@@ -1,0 +1,14 @@
+<div class="container">
+<div class="row">
+<%= simple_form_for([@udemie]) do |form| %>
+<%= form.input :title, input_html: {class: "form-control"} %>
+<%= form.input :description, input_html: {class: "form-control"} %>
+<%= form.input :count, input_html: {class: "form-control"} %>
+<%= form.input :price, input_html: {class: "form-control"} %>
+<%= form.input :rating, input_html: {class: "form-control"} %>
+<%= form.input :our_rating, input_html: {class: "form-control"} %>
+<%= form.input :contact, input_html: {class: "form-control"} %>
+<%= form.submit %>
+<% end %>
+</div>
+</div>

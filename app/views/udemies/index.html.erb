@@ -12,6 +12,7 @@
             <th>Sold</th>
             <th>Rating</th>
             <th>Our Rating</th>
+            <th>Done</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -26,6 +27,7 @@
           <td><%= a.currency_to_integer(a.price) * a.count.to_i %></td>
         	<td><%= a.rating %></td>
           <td><%= a.our_rating %></td>
+          <td><%= a.done %></td>
           <td><%= link_to "Edit", edit_udemy_path(a) %></td>
         </tr>
         <% end %>

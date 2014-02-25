@@ -17,8 +17,8 @@ class UdemiesController < ApplicationController
 	end
 
 	def update
-		if @udemie.update(udemie_params)
-	      redirect_to root_path, :gflash => { :success => "You've successfully updated this udemie" }
+		if @udemy.update(udemy_params)
+	      redirect_to root_path
 	    else
 	      render action: 'edit'
 	    end
@@ -26,13 +26,15 @@ class UdemiesController < ApplicationController
 
 	private
 
-	def udemie_params
-		 params.require(:udemie).permit(:title, :description, :count, :price, :rating, :our_rating, :contact)
+		def set_udemie
+		@udemy = Udemy.find(params[:id])
 	end
 
-	def set_udemie
-		@udemie = Udemy.find(params[:id])
+	def udemy_params
+		 params.require(:udemy).permit(:title, :description, :count, :price, :rating, :our_rating, :contact, :done)
 	end
+
+
 
 
 
